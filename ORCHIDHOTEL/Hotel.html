@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>OrchidHotel</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+
+    <link rel="stylesheet" href="Hotel.css">
+    <script src="MKSPORT.js" async></script>
+    <script src="jquery.min.js" async></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="Hotel.js" async></script>
+
+    <script async>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() < 80) {
+                $('li.active a').css('color', '');
+                $('#mo').removeClass('importantRule');
+                $('nav').addClass('bg-transparent');
+                $('nav').addClass('p-4');
+                document.getElementById('logo').style.width = "80px";
+                $('nav').addClass('p-4');
+            } else {
+                $('li.active a').css('color', '#e3ac22');
+                $('#mo').addClass('importantRule');
+                $('nav').removeClass('bg-transparent');
+                $('nav').removeClass('p-4');
+                document.getElementById('logo').style.width = "70px";
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mo">
+        <div class="container">
+            <a class="navbar-brand " href="#">
+                <img style="width: 70px;" src="logo24-01 (2).png" alt="" id="logo">
+            </a>
+            <button class="navbar-toggler" onclick="myfun();" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="d-md-block d-none">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item  ">
+                        <a class="nav-link mr-4" href="" id="one" data-toggle="modal" data-target="#exampleModal">تواصل معنا
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            الخدمات
+                        </a>
+                        <div class="dropdown-menu text-center " aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item js-scroll-trigger" href="#resturants">المطاعم</a>
+                            <a class="dropdown-item js-scroll-trigger" href="#swim_pools">المسابح</a>
+                            <a class="dropdown-item js-scroll-trigger" href="#resort">المنتجع</a>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#rooms" id="one">الغرف
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#about">حول</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#">الرئيسية</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#">الرئيسية</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#rooms" id="one">الغرف
+                        </a>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        الخدمات
+                    </a>
+                    <div class="dropdown-menu text-center " aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item js-scroll-trigger" href="#resturants">المطاعم</a>
+                        <a class="dropdown-item js-scroll-trigger" href="#swim_pools">المسابح</a>
+                        <a class="dropdown-item js-scroll-trigger" href="#resort">المنتجع</a>
+                    </div>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4 js-scroll-trigger" href="#about">حول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4" href="" data-toggle="modal" data-target="#exampleModal" >تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active"
+                    style="background-image: url('https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+                    <div class="carousel-caption">
+                        <h2 class="display-4 d-md-block d-none">افضل الغرف المريحة</h2>
+                                                <h1 class="d-block d-md-none">افضل الغرف المريحة</h1>
+                        <p class="lead">احجز غرفة من افضل الغرف المزودة بالعديد من الخدمات التي تلبي  كافة احتياجاتك</p>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+                    <div class="carousel-caption">
+                        <h2 class="display-4 d-md-block d-none">اجمل اطلالة</h2>
+                                                                        <h1 class="d-block d-md-none">اجمل اطلالة</h1>
+
+                        <p class="lead">اطلالة خلابة على الساحل السوري</p>
+                    </div>
+                </div>
+                <div class="carousel-item "
+                    style="background-image: url('https://images.unsplash.com/photo-1503003378590-66f89f543bc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
+                    <div class="carousel-caption">
+                        <h2 class="display-4 d-md-block d-none " >استمتع في وقت راحتك</h2>
+                                                                                                <h1 class="d-block d-md-none">استمتع في وقت راحتك</h1>
+
+                        <p class="lead">احجز غرفة الان واستمتع بأجمل اللحظات في عطلتك</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </header>
+    
+    <section class="about-us py-5 jumbotron" id="about">
+        <div class="container mt-5 pb-md-4">
+            <div class="row">
+                <div class="col-md-6 " id="most">
+                    <div class="imgff container-fluid">
+                        <img id="aboutus" style="width: 525px;" class="lazyload img-fluid" src="img_placeholder5.jpg"
+                            data-src="https://images.unsplash.com/photo-1551286923-c82d6a8ae079?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80" alt="">
+
+                    </div>
+                    <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1560200353-ce0a76b1d438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"
+                        class="img-abs img-fluid lazyload" alt="">
+                </div>
+
+                <div class="col-md-6 d-md-none d-block mt-5 ">
+                    <h2 style="color: #e3ac22;" class="mt-3">حول الفندق</h2>
+                    <hr>
+                    <p> فندق اوركيد الذي يقع في اللاذقية على الساحل السوري والذي يبلغ مساحته 100 كم ويضم 20 طابق بداخلهم 400 غرفة متنوعة ما
+                        بين غرف وأجنحة 
+                    </p>
+                    <p> احجز غرفة من افضل الغرف في فندق اوركيد</p>
+                    <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                        data-target=".bd-example-modal-lg">المزيد من المعلومات حول التصميم الداخلي والخارجي</button>
+                </div>
+                <div class="col-md-6 d-none d-md-block ">
+                    <h2 style="color: #e3ac22;" class="mt-3">حول الفندق</h2>
+                    <hr>
+                    <p> فندق اوركيد الذي يقع في اللاذقية على الساحل السوري والذي يبلغ مساحته 100 كم ويضم 20 طابق بداخلهم 400 غرفة متنوعة ما
+                        بين غرف وأجنحة
+                    </p>
+                    <p> احجز غرفة من افضل الغرف في فندق اوركيد</p>
+                    <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                        data-target=".bd-example-modal-lg">المزيد من المعلومات حول التصميم الداخلي</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="btn text-left float-left" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" style="color: #e3ac22;">التصميم الداخلي</h5>
+
+                </div>
+                <div class="modal-body ">
+                    <div class="container text-center">
+                        <section class="gallery-block grid-gallery py-2">
+                            <div class="container">
+                                <div class="heading">
+                                    <h2> صور الفندق من الداخل</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-4 item">
+                                        <a class="lightbox" href="https://images.unsplash.com/photo-1584954490709-3c000d2ec110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                                            <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1584954490709-3c000d2ec110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 item">
+                                        <a class="lightbox" href="https://images.unsplash.com/photo-1549875648-357fef68fec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80">
+                                            <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1549875648-357fef68fec7?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 item">
+                                        <a class="lightbox" href="https://images.unsplash.com/photo-1575642123781-42f3fd05d9cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                                            <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1575642123781-42f3fd05d9cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                        <p class="w-100 mt-2" style="font-size: large;">
+                            ان الفندق مصمم من قبل ابرز المهندسين بحيث يوفر كافة خدمات العائلة وبداخل الفندق لدينا العديد من الخدمات مثل المسابح والمنتجعات والمطاعم والالعاب المائية للأطفال
+                        </p>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="gallery-block cards-gallery" id="rooms">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="section-heading text-uppercase font-weight-lighter ">الغرف</h1>
+                <hr style="    width: 50px;
+                    background-color: #e3ac22;
+                    height: 3px;
+                    margin-top: -7px;" class="mb-5">
+            </div>
+            <div class="row">
+                                    <div class="card-deck">
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                            <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1560448205-4d9b3e6bb6db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                                alt="Card Image" class="card-img-top lazyload">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3">غرفة سوبريور مزدوجة</h5>
+                            <p class="text-dark">تتسع لشخصين او ثلاث اشخاص</p>
+                            <p class="text-muted">سعر حجز الغرفة باليوم الواحد $130</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_one">المزيد من المعلومات</button>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80">
+                            <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
+                                alt="Card Image" class="card-img-top lazyload ">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3">غرف سوبريور كينغ</h5>
+                            <p class="text-dark">غرف مميزة تتسع لعدة اشخاص</p>
+                            <p class="text-muted">سعر حجز الغرفة باليوم الواحد $130</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_two">المزيد
+                                من المعلومات</button>
+                        </div>
+    
+                    </div>
+    
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox"
+                            href="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                            <img src="img_placeholder5.jpg"
+                                data-src="https://images.unsplash.com/photo-1515362655824-9a74989f318e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                                alt="Card Image" class="card-img-top lazyload ">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3">جناح من غرفتي نوم</h5>
+                            <p class="text-dark">يوفر هذا الجناح غرفتين نوم ذات اطلالات على البحر وتتسع لأربع اشخاص</p>
+                            <p class="text-muted">سعر حجز الغرفة باليوم الواحد $150</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_three">المزيد
+                                من المعلومات</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                            <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card Image"
+                                class="card-img-top lazyload">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3"> جناح عائلي مطل على البحر</h5>
+                            <p class="text-dark"> يحتوي هذا الجناح على غرفتين نوم و شرفة مطلة على البحر </p>
+                            <p class="text-muted">سعر حجز الغرفة باليوم الواحد $200</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_four">المزيد
+                                من المعلومات</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="https://images.unsplash.com/reserve/8T8J12VQxyqCiQFGa2ct_bahamas-atlantis.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                            <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/reserve/8T8J12VQxyqCiQFGa2ct_bahamas-atlantis.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card Image"
+                                class="card-img-top lazyload" style="height:266px">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3">جناح ديلوكس على البحر</h5>
+                            <p class="text-dark"> يتميز بأن هذا الجناح رفيع الطراز واطلالته مباشرة على البحر</p>
+                            <p class="text-muted">سعر حجز الغرفة  باليوم الواحد $170</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_five">المزيد
+                                من المعلومات</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 transform-on-hover">
+                        <a class="lightbox" href="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                            <img src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="Card Image"
+                                class="card-img-top lazyload ">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 py-3">جناح ملكي</h5>
+                            <p class="text-dark"> يتوفر في هذا الجناح عالي المستوي الذي تم تصميمه بشكل ملكي </p>
+                            <p class="text-muted">سعر حجز الغرفة باليوم الواحد $170</p>
+                            <button type="button" class="btn" style="background-color: #e3ac22;" data-toggle="modal"
+                                data-target=".room_six">المزيد
+                                من المعلومات</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="showcase mt-5" id="services">
+            <div class="text-center">
+                <h1 class="section-heading text-uppercase font-weight-lighter my-4 ">خدماتنا</h1>
+                <hr style="    width: 50px;
+        background-color: #e3ac22;
+        height: 3px;
+        margin-top: -10px;"
+        class="mb-4">
+            </div>
+            <div class="container-fluid p-0 my-3">
+                <div class="row no-gutters" id="resturants">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img d-md-block d-none"
+                        style="background-image: url('https://images.unsplash.com/photo-1490457843367-34b21b6ccd85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=769&q=80');">
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text d-md-block d-none">
+                        <h2>افخر المطاعم</h2>
+                        <p class="lead mb-0">تذوق افضل الاطعمة والوجبات بكافة انواعها في مطاعم فندق الاوركيد</p>
+                        <button type="button" class="btn my-3" onClick="javascript:window.open('resturants.html', '_blank');"
+                            style="background-color: #e3ac22;">المزيد من
+                            المعلومات</button>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text d-block d-md-none text-center" 
+                        style="background-color: #fcfcfc;">
+                        <div class="p-4">
+                            <img class="img-fluid rounded-circle lazyload"
+                                data-src="https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                        </div>
+                        <h2>افخر المطاعم</h2>
+                        <p class="lead mb-0">تذوق افضل الاطعمة والوجبات بكافة انواعها في مطاعم فندق الاوركيد</p>
+                        <button type="button" class="btn my-3" onClick="javascript:window.open('resturants.html', '_blank');" style="background-color: #e3ac22;">المزيد من
+                            المعلومات</button>
+                    </div>
+                </div>
+                <div class="row no-gutters " id="swim_pools">
+                    <div class="col-lg-6 text-white showcase-img d-md-block d-none"
+                        style="background-image: url('https://images.unsplash.com/photo-1584074093647-6163502a785e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="col-lg-6 my-auto showcase-text d-md-block d-none">
+                        <h2>افضل المسابح النظيفة والمعقمة</h2>
+                        <p class="lead mb-0">استمتع انت وعائلتك بافضل المسابح في هذا الصيف الحار</p>
+                        <button type="button" class="btn my-3" onClick="javascript:window.open('swimpools.html', '_blank');"
+                            style="background-color: #e3ac22;">المزيد من
+                            المعلومات</button>
+                    </div>
+
+                    <div class="col-lg-6 my-auto showcase-text d-block d-md-none text-center" style="background-color: #fcfcfc;" >
+                        <div class="p-4">
+                            <img class="img-fluid rounded-circle lazyload"
+                                data-src="https://images.unsplash.com/photo-1584074093647-6163502a785e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                        </div>
+                        <h2>افضل المسابح النظيفة والمعقمة</h2>
+                        <p class="lead mb-0">استمتع انت وعائلتك بافضل المسابح في هذا الصيف الحار</p>
+                        <button type="button" class="btn my-3" onClick="javascript:window.open('swimpools.html', '_blank');"
+                            style="background-color: #e3ac22;">المزيد من
+                            المعلومات</button>
+                    </div>
+                </div>
+                <div class="row no-gutters" id="resort">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img d-md-block d-none"
+                        style="background-image: url('https://images.unsplash.com/photo-1594099462046-1df31fd4a66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80');">
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text d-md-block d-none">
+                        <h2>افخر المنتجعات خصيصاً لك</h2>
+                        <p class="lead mb-0">استمتع انت وعائلتك في افضل المنتجعات في العالم</p>
+                        <button type="button" class="btn my-3" 
+                            style="background-color: #e3ac22;" data-toggle="modal" data-target="#resortt">المزيد من
+                            المعلومات</button>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text d-block d-md-none text-center"
+                        style="background-color: #fcfcfc;">
+                        <div class="p-4">
+                            <img class="img-fluid rounded-circle lazyload"
+                                data-src="https://images.unsplash.com/photo-1594099462046-1df31fd4a66c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                                alt="">
+                        </div>
+                        <h2>افخر المنتجعات خصيصاً لك</h2>
+                        <p class="lead mb-0">استمتع انت وعائلتك في افضل المنتجعات في العالم</p>
+                        <button type="button" class="btn my-3" onClick="javascript:window.open('resort.html', '_blank');"
+                            style="background-color: #e3ac22;" data-toggle="modal" data-target="#resortt"">المزيد من
+                            المعلومات</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="testimonials text-center bg-light pt-3 pb-5">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="section-heading text-uppercase font-weight-lighter my-4 ">اهدافنا</h1>
+            <hr style="    width: 50px;
+                background-color: #e3ac22;
+                height: 3px;
+                margin-top: -10px;" class="mb-4">
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid  mb-3 lazyload" src="img_placeholder5.jpg" data-src="https://image.flaticon.com/icons/svg/2464/2464363.svg" alt="">
+                    <h5>تحقيق افضل خدمة للعملاء</h5>
+                    <p class="font-weight-light mb-0">خدمة العملاء هو هدفنا الاساسي لذلك نقوم بتلبية كافة متطلبات العميل</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid  mb-3 lazyload" src="img_placeholder5.jpg" data-src="https://image.flaticon.com/icons/svg/2618/2618477.svg" alt="">
+                    <h5>تأمين كافة المستلزمات</h5>
+                    <p class="font-weight-light mb-0">تأمين كافة المستلزمات الضرورية للعميل</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                    <img class="img-fluid  mb-3 lazyload" src="img_placeholder5.jpg" data-src="https://image.flaticon.com/icons/svg/3050/3050241.svg" alt="">
+                    <h5>توفير عروض منافسة</h5>
+                    <p class="font-weight-light mb-0">توفير افضل الغرف بأرخص الاسعار</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="call-to-action text-white text-center lazyload">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 mx-auto text-right d-md-block d-none">
+                <h2 class="mb-4">عروض مميزة خصيصاً لك</h2>
+                <p>اتطلع على الغرف واختر الغرف المناسبة لك</p>
+            </div>
+            <div class="col-xl-9 mx-auto d-block d-md-none">
+                <h2 class="mb-4">عروض مميزة خصيصاً لك</h2>
+                <p>اتطلع على الغرف واختر الغرف المناسبة لك</p>
+            </div>
+            <div class="col-md-10 col-lg-8 col-xl-12 mx-auto ">
+                <form>
+                    <div class="form-row ">
+                        <div class="col-12 col-md-2">
+                            <a type="submit" href="#rooms" class="btn btn-block btn-lg btn-primary js-scroll-trigger">احجز الان</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-block grid-gallery" id="galllery">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="section-heading text-uppercase font-weight-lighter mb-4">معرض الصور</h1>
+            <hr style="    width: 50px;
+                background-color: #e3ac22;
+                height: 3px;
+                margin-top: -10px;" class="mb-4">
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6 col-lg-3 item col-sm-4">
+                <a class="lightbox" href="https://images.unsplash.com/photo-1576801582643-c4e3d33efd2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1576801582643-c4e3d33efd2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 item">
+                <a class="lightbox"
+                    href="https://images.unsplash.com/photo-1570213489059-0aac6626cade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                        data-src="https://images.unsplash.com/photo-1570213489059-0aac6626cade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3 item col-sm-4">
+                <a class="lightbox"
+                    href="https://images.unsplash.com/photo-1574728435494-4134e681f687?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                    <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                        data-src="https://images.unsplash.com/photo-1574728435494-4134e681f687?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80">
+                </a>
+            </div>
+        <div class="col-md-6 col-lg-3 item col-sm-4">
+            <a class="lightbox"
+                href="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80">
+                <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                    data-src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80">
+            </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item">
+            <a class="lightbox"
+                href="https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                    data-src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+            </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item col-sm-4">
+            <a class="lightbox"
+                href="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                    data-src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+            </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item col-sm-4">
+            <a class="lightbox"
+                href="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                    data-src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+            </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item">
+            <a class="lightbox"
+                href="https://images.unsplash.com/photo-1570213489059-0aac6626cade?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                <img class="img-fluid image scale-on-hover lazyload" src="img_placeholder5.jpg"
+                    data-src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80">
+            </a>
+        </div>
+        
+        </div>
+    </div>
+</section>
+
+<div id="carouselExampleCaptions" class="carousel slide bg-light" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner mostafa" >
+        <div class="text-center">
+            <h1 class="section-heading text-uppercase font-weight-lighter mt-4 ">SWOT Analaysis</h1>
+            <hr style="    width: 100px;
+                background-color: #e3ac22;
+                height: 3px;
+                margin-top: -3px;">
+        </div>
+        <div class="carousel-item active ">
+            <div class="carousel-caption">
+                <h5 >نقاط القوة</h5>
+                <p>الخدمة الممتازة والامكانيات العالية</p>
+                <p>وتجهيزات المبنى والمنتجع</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption ">
+                <h5 >نقاط الضعف</h5>
+                <p>حجم المطابخ صغيرة</p>
+                <p>اسعار الحجز مرتفعة</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption ">
+                <h5 >الفرص</h5>
+                <p>بإمكاننا الوصول الى ترتيب عالمي من حيث </p>
+                <p>الخدمة والجودة</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption">
+                <h5>التهديدات</h5>
+                <p>قلة الزبائن والموظفين</p>
+                <p>وقلة المستثمرين في المنتجعات</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev mostafa" class="ll" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next mostafa" class="ll" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">تواصل معنا</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>موقع الفندق</h5>
+                <p>اللاذقية على الساحل السوري</p>
+                <h5>رقم الهاتف</h5>
+                <P>0114425445</P>
+                                    <p>لا تتردد بإرسال رسالة بحال كان لديك مشكلة
+                                    <p>
+
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">:الاسم</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">:المشكلة</label>
+                        <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <section id="footer" style=" padding: 40px 0;">
+        <div class="container">
+            <div class="row text-center text-xs-center text-sm-left text-md-left ">
+                <div class="col-xs-12 col-sm-4 col-md-4 my-sm-4">
+                    <h5>روابط</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="#about" class="js-scroll-trigger"><i class="fa fa-angle-double-right"></i>حول فندق اوركيد</a>
+                        </li>
+                        <li><a href="#rooms" class="js-scroll-trigger"><i class="fa fa-angle-double-right"></i>الغرف الخاص بنا</a>
+                        </li>
+                        <li><a href="#galllery" class="js-scroll-trigger"><i class="fa fa-angle-double-right"></i>معرض الصور</a>
+                        </li>
+                        <li><a href="#services" class="js-scroll-trigger"><i class="fa fa-angle-double-right"></i>الخدمات</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 text-white  my my-md-4">
+                    <h5>الاستعلامات</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>tel:0934432432
+                        </li>
+                        <li>email:orchidhotel@gmail.com
+                        </li>
+                        <li><button class="btn btn-success" data-toggle="modal" data-target="#exampleModal">ارسل رسالة</button></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 text-white my-md-4">
+                    <h5>موقع الفندق</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li>Syria,Latakia
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-1 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/mostafamilly14/"><i
+                                    class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/mostafamilly14/"><i
+                                    class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/mostafamilly14/"><i
+                                    class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/mostafamilly14/"><i
+                                    class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/mostafamilly14/" target="_blank"><i
+                                    class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p class="h6">© All right Reversed.<a class="text-green ml-2" href="#"
+                            target="_blank">OrchidHotel</a></p>
+                    <p>Design by <a href="https://www.facebook.com/mostafamilly14/" class="text-primary">Mostafa Milly &copy;</a> </p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i
+            class="fas fa-chevron-up"></i></a>
+
+<div class="modal fade " id="resortt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb1" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-4" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1585974023861-ff927ce65019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1561066662-0e86f822d35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1484820540004-14229fe36ca4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-3">
+                                <li data-target="#carousel-thumb1" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1585974023861-ff927ce65019?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb1" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1561066662-0e86f822d35e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb1" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1484820540004-14229fe36ca4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3">
+                        <h2 class="h2-responsive product-name">
+                            <strong>المنتجع</strong>
+                        </h2>
+
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            خدمات المنتجع <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li>تدفئة</li>
+                                                <li>مسابح</li>
+                                                <li>مساحات للعب الاطفال</li>
+                                                <li> حمام</li>
+                                                <li> تكييف مركزي </li>
+                                                <li>جلسات مساج</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li>نشاطات ترفيهية للأطفال مجاناً</li>
+                                                <li>جلسة مساج مجانية</li>
+                                                <li> توصيل طعام مجاني </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+
+                            <div class="text-center my-4">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                        <!-- /.Add to Cart -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--Rooms Modals-->
+<!--modal for room one-->
+<div class="modal fade room_one" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb" class="carousel slide pb-3 carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload"
+                                    src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload"
+                                        src="img_placeholder5.jpg" data-src="https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1523699289804-55347c09047d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5">
+                                <li data-target="#carousel-thumb" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1523699289804-55347c09047d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 " style="margin-top:35px;">
+                        <h2 class="h2-responsive product-name">
+                            <strong>غرفة سوبريور مزدوجة</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$130</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$150</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                           ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> حمام فيه جميع المستلزمات</li>
+                                                <li> تكييف مركزي </li>
+                                                <li>تدفئة</li>
+                                                <li>شاشة مسطحة</li>
+                                                <li>مكتب صغير</li>
+                                                <li>الة لصنع الشاي والقهوة</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> وجبتين مجاناً </li>
+                                                <li>انترنت مجاني</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            
+                        <!-- Accordion wrapper -->
+
+
+                        <!-- Add to Cart -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <select class="md-form mdb-select colorful-select dropdown-primary">
+                                        <option value="" disabled selected>اختر عدد الغرف</option>
+                                        <option value="1">غرفة</option>
+                                        <option value="2">غرفتين</option>
+                                        
+                                    </select>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <select class="md-form mdb-select colorful-select dropdown-primary">
+                                        <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                        <option value="1">يوم واحد</option>
+                                        <option value="2">يومان</option>
+                                        <option value="3">ثلاثة ايام</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="text-center my-4">
+
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button class="btn btn-primary">احجز الان
+                                    <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.Add to Cart -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> </div>
+<!--modal for room two-->
+<div class="modal fade room_two" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb1" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-5" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1569335468888-1d3e4a5a3595?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1527986654082-0b5b3fef2632?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5 ">
+                                <li data-target="#carousel-thumb1" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb1" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1569335468888-1d3e4a5a3595?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb1" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1527986654082-0b5b3fef2632?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3" >
+                        <h2 class="h2-responsive product-name">
+                            <strong>غرفة سوبريور كينغ</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$130</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$150</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> حمام</li>
+                                                <li> تكييف مركزي </li>
+                                                <li>تدفئة</li>
+                                                <li>شاشة مسطحة</li>
+                                                <li>شبكة انترنت سريعة</li>
+                                                <li>مسبح</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> توصيل طعام مجاني </li>
+                                                <li>انترنت مجاني</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد الغرف</option>
+                                            <option value="1">غرفة</option>
+                                            <option value="2">غرفتين</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                            <option value="1">يوم واحد</option>
+                                            <option value="2">يومان</option>
+                                            <option value="3">ثلاثة ايام</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="text-center my-4">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">احجز الان
+                                        <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.Add to Cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> </div>
+<!--modal for room three-->
+<div class="modal fade room_three" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb2" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-5" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1576504445558-0edc67b0f7a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=624&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5 ">
+                                <li data-target="#carousel-thumb2" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1576504445558-0edc67b0f7a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=624&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb2" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb2" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3">
+                        <h2 class="h2-responsive product-name">
+                            <strong>جناح من غرفتي نوم</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$150</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$190</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> حمام</li>
+                                                <li> غرفتي نوم </li>
+                                                <li>تدفئة</li>
+                                                <li>شاشة مسطحة</li>
+                                                <li>مسبح للأولاد</li>
+                                                <li>شبكة انترنت سريعة</li>
+                                                <li>مسبح</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> توصيل طعام مجاني </li>
+                                                <li>انترنت مجاني</li>
+                                                <li>خدمة 24/24</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد الغرف</option>
+                                            <option value="1">غرفة</option>
+                                            <option value="2">غرفتين</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                            <option value="1">يوم واحد</option>
+                                            <option value="2">يومان</option>
+                                            <option value="3">ثلاثة ايام</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="text-center my-4">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">احجز الان
+                                        <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.Add to Cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> </div>
+<!--modal for room four-->
+<div class="modal fade room_four" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb3" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-5" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1528916138893-06acfc566dea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1564177790-79ff57104bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb3" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb3" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5 ">
+                                <li data-target="#carousel-thumb3" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1528916138893-06acfc566dea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb3" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb3" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1564177790-79ff57104bb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3">
+                        <h2 class="h2-responsive product-name">
+                            <strong>جناح عائلي مطل على البحر</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$200</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$300</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> حمام</li>
+                                                <li> غرفتي نوم </li>
+                                                <li>تدفئة</li>
+                                                <li>شاشة مسطحة</li>
+                                                <li>شبكة انترنت سريعة</li>
+                                                <li>اطلالة رائعة على البحر </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> توصيل طعام مجاني </li>
+                                                <li>انترنت مجاني</li>
+                                            
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد الغرف</option>
+                                            <option value="1">غرفة</option>
+                                            <option value="2">غرفتين</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                            <option value="1">يوم واحد</option>
+                                            <option value="2">يومان</option>
+                                            <option value="3">ثلاثة ايام</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="text-center my-4">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">احجز الان
+                                        <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.Add to Cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade room_five" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb4" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-5" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1578898886615-0c4719f932dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1572177215152-32f247303126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb4" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb4" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5 ">
+                                <li data-target="#carousel-thumb4" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=687&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb4" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1578898886615-0c4719f932dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb4" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1572177215152-32f247303126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3">
+                        <h2 class="h2-responsive product-name">
+                            <strong>جناح ديلوكس على البحر</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$170</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$190</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li>يوجد فيه سرير مزودج كبير</li>
+                                                <li>غرفة معيشة تحتوي على اريكة وكرسي بذراعين</li>
+                                                <li>شاشة تلفزيون مسطحة عالية الدقة</li>
+                                                <li>يحتوي على حمام داخلي</li>
+                                                <li>تصميم رفيع المستوى</li>
+                                                <li>حوض استحمام ساخن وجميع مستلزمات الحمام تتسع لشخصين</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> توصيل طعام مجاني </li>
+                                                <li>انترنت مجاني</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد الغرف</option>
+                                            <option value="1">غرفة</option>
+                                            <option value="2">غرفتين</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                            <option value="1">يوم واحد</option>
+                                            <option value="2">يومان</option>
+                                            <option value="3">ثلاثة ايام</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="text-center my-4">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">احجز الان
+                                        <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.Add to Cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--modal for room six-->
+<div class="modal fade room_six" id="modalQuickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-thumb5" class="carousel slide carousel-fade carousel-thumbnails"
+                            data-ride="carousel">
+                            <!--Slides-->
+                            <div class="carousel-inner mb-5" role="listbox">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1565031491910-e57fac031c41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1576354302919-96748cb8299e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=568&q=80"
+                                        alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100 lazyload" src="img_placeholder5.jpg"
+                                        data-src="https://images.unsplash.com/photo-1572177215152-32f247303126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+                                        alt="Third slide">
+                                </div>
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-thumb5" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-thumb5" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                            <ol class="carousel-indicators mb-5 ">
+                                <li data-target="#carousel-thumb5" data-slide-to="0" class="active">
+                                    <img src="https://images.unsplash.com/photo-1565031491910-e57fac031c41?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb5" data-slide-to="1">
+                                    <img src="https://images.unsplash.com/photo-1578898886615-0c4719f932dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                                        width="60">
+                                </li>
+                                <li data-target="#carousel-thumb5" data-slide-to="2">
+                                    <img src="https://images.unsplash.com/photo-1572177215152-32f247303126?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80"
+                                        width="60">
+                                </li>
+                            </ol>
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <div class="col-lg-7 mt-3">
+                        <h2 class="h2-responsive product-name">
+                            <strong>جناح ملكي</strong>
+                        </h2>
+                        <h4 class="h4-responsive">
+                            <span class="green-text">
+                                <strong>$170</strong>
+                            </span>
+                            <span class="grey-text">
+                                <small>
+                                    <s>$220</s>
+                                </small>
+                            </span>
+                        </h4>
+
+                        <!--Accordion wrapper-->
+                        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1"
+                                        aria-expanded="true" aria-controls="collapseOne1">
+                                        <h5 class="mb-0">
+                                            ملحقات الغرفة <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel"
+                                    aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li>غرفة نوم بسرير مزوج كبير</li>
+                                                <li>غرفة معيشة تحتوي على اريكة وكرسي بذراعين</li>
+                                                <li>مدفئة</li>
+                                                <li>شاشة تلفزيون مسطحة عالية الجودة</li>
+                                                <li>حمام مصمم من الرخام العاجي والذهبي</li>
+                                                <li>فيه حوض استحمام ساخن وشرفة مطلة على البحر مزودة بأريكة وكرسي بذراعين للجلوس فيها</li>
+                                        
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+                            <div class="card">
+
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx"
+                                        href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                        <h5 class="mb-0">
+                                            العروض <i class="fas fa-angle-down rotate-icon"></i>
+                                        </h5>
+                                    </a>
+                                </div>
+
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                                    data-parent="#accordionEx">
+                                    <div class="card-body">
+                                        <div dir="rtl">
+                                            <ul>
+                                                <li> توصيل طعام مجاني </li>
+                                                <li>انترنت مجاني</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Accordion card -->
+
+                            <!-- Accordion card -->
+
+                            <!-- Accordion wrapper -->
+
+
+                            <!-- Add to Cart -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد الغرف</option>
+                                            <option value="1">غرفة</option>
+                                            <option value="2">غرفتين</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <select class="md-form mdb-select colorful-select dropdown-primary">
+                                            <option value="" disabled selected>اختر عدد ايام الحجز</option>
+                                            <option value="1">يوم واحد</option>
+                                            <option value="2">يومان</option>
+                                            <option value="3">ثلاثة ايام</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="text-center my-4">
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button class="btn btn-primary">احجز الان
+                                        <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /.Add to Cart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var lazyloadImages;
+
+                if ("IntersectionObserver" in window) {
+                    lazyloadImages = document.querySelectorAll(".lazyload");
+                    var imageObserver = new IntersectionObserver(function (entries, observer) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                var image = entry.target;
+                                image.src = image.dataset.src;
+                                image.classList.remove("lazyload");
+                                imageObserver.unobserve(image);
+                            }
+                        });
+                    });
+
+                    lazyloadImages.forEach(function (image) {
+                        imageObserver.observe(image);
+                    });
+                } else {
+                    var lazyloadThrottleTimeout;
+                    lazyloadImages = document.querySelectorAll(".lazyload");
+
+                    function lazyload() {
+                        if (lazyloadThrottleTimeout) {
+                            clearTimeout(lazyloadThrottleTimeout);
+                        }
+
+                        lazyloadThrottleTimeout = setTimeout(function () {
+                            var scrollTop = window.pageYOffset;
+                            lazyloadImages.forEach(function (img) {
+                                if (img.offsetTop < (window.innerHeight + scrollTop)) {
+                                    img.src = img.dataset.src;
+                                    img.classList.remove('lazyload');
+                                }
+                            });
+                            if (lazyloadImages.length == 0) {
+                                document.removeEventListener("scroll", lazyload);
+                                window.removeEventListener("resize", lazyload);
+                                window.removeEventListener("orientationChange", lazyload);
+                            }
+                        }, 20);
+                    }
+
+                    document.addEventListener("scroll", lazyload);
+                    window.addEventListener("resize", lazyload);
+                    window.addEventListener("orientationChange", lazyload);
+                }
+            })
+        </script>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+        <script>
+            baguetteBox.run('.cards-gallery', { animation: 'slideIn' });
+                    baguetteBox.run('.grid-gallery', { animation: 'slideIn' });
+
+        </script>
+        <script>
+            baguetteBox.run('.grid-gallery', { animation: 'slideIn' });
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+
+        <script>
+            $('.navbar-nav>li>a').on('click', function () {
+                if (!$(this).hasClass('dropdown-toggle'))
+                    $('.navbar-collapse').removeClass('show');
+               else {
+                   $(".dropdown-menu a").click(function () {
+                        $(this).closest(".dropdown-menu").removeClass('show');
+                        $('.navbar-collapse').removeClass('show');
+                    });
+               }
+            });
+            
+        </script>
+        
+</body>
+
+</html>
